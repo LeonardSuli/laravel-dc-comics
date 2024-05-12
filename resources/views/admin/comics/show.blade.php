@@ -17,7 +17,6 @@
 
     <h2>{{ $comic->title }}</h2>
     <img width="200px" src="{{ $comic->cover_image }}" alt="">
-    <a href="{{ route('comics.show', $comic) }}">View</a>
 
 </body>
 

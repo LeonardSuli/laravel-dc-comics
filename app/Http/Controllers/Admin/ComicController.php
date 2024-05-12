@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ComicController extends Controller
 {
@@ -40,7 +41,7 @@ class ComicController extends Controller
     {
         // dd($comic);
 
-        return view('admin.comics.show', ['comics' => $comic]);
+        return view('admin.comics.show', compact('comic'));
         // return view();
     }
 
