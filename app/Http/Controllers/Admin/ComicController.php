@@ -18,21 +18,36 @@ class ComicController extends Controller
         return view('admin.comics.index', ['comics' => Comic::all()]);
     }
 
+
+
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('admin.comics.create');
     }
+
+
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $data = $request->all();
+
+        $comic = Comic::create($data);
+
+        return redirect()->route('comics.index', $comic);
     }
+
+
+
 
     /**
      * Display the specified resource.
@@ -44,6 +59,10 @@ class ComicController extends Controller
         return view('admin.comics.show', compact('comic'));
     }
 
+
+
+
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -52,6 +71,10 @@ class ComicController extends Controller
         //
     }
 
+
+
+
+
     /**
      * Update the specified resource in storage.
      */
@@ -59,6 +82,11 @@ class ComicController extends Controller
     {
         //
     }
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
