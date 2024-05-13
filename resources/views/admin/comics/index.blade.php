@@ -28,7 +28,10 @@
                             <td>{{ $comic->title }}</td>
                             <td><img width="100px" src="{{ $comic->cover_image }}" alt=""></td>
                             <td>{{ $comic->author }}</td>
-                            <td><a href="{{ route('comics.show', $comic) }}">View</a></td>
+                            <td>
+                                <a href="{{ route('comics.show', $comic) }}">View</a>
+                                <a href="{{ route('comics.edit', $comic) }}">Edit</a>
+                            </td>
                         </tr>
 
                     @empty
