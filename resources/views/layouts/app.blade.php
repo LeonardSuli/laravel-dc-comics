@@ -21,13 +21,13 @@
 
 <body class="antialiased">
 
-    <header>Header</header>
+    @include('partials.header')
 
     <main>
         @yield('content')
     </main>
 
-    <footer>Footer</footer>
+    @include('partials.footer')
 
 </body>
 

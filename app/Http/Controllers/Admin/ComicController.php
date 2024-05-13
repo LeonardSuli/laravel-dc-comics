@@ -15,7 +15,7 @@ class ComicController extends Controller
     {
         // dd(Comic::all());
 
-        return view('admin.comics.index', ['comics' => Comic::all()]);
+        return view('admin.comics.index', ['comics' => Comic::orderByDesc('id')->get()]);
     }
 
 
@@ -43,7 +43,7 @@ class ComicController extends Controller
 
         $comic = Comic::create($data);
 
-        return redirect()->route('comics.index', $comic);
+        return to_route('comics.index', $comic);
     }
 
 
