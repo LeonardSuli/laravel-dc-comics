@@ -3,6 +3,11 @@
 @section('content')
     <div class="container min-vh-100 py-5">
 
+        <a name="" id="" class="btn btn-primary rounded-pill position-fixed bottom-0 end-0 m-3"
+            href="{{ route('comics.create') }}" role="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <span>+ ADD</span>
+        </a>
 
         <div class="table-responsive">
             <table class="table table-primary">
