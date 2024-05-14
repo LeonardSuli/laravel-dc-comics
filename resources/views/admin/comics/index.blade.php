@@ -29,8 +29,23 @@
                             <td><img width="100px" src="{{ $comic->cover_image }}" alt=""></td>
                             <td>{{ $comic->author }}</td>
                             <td>
-                                <a href="{{ route('comics.show', $comic) }}">View</a>
-                                <a href="{{ route('comics.edit', $comic) }}">Edit</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('comics.show', $comic) }}">View</a>
+
+                                <a class="btn btn-secondary btn-sm" href="{{ route('comics.edit', $comic) }}">Edit</a>
+
+
+
+                                <form action="{{ route('comics.destroy', $comic) }}" method="post">
+
+                                    @csrf
+
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-danger">
+                                        Delete
+                                    </button>
+
+                                </form>
                             </td>
                         </tr>
 
