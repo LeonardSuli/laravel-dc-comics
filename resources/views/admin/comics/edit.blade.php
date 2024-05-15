@@ -4,7 +4,7 @@
     <h1 class="p-3 bg-dark text-white">Edit a comic</h1>
 
     {{-- Error --}}
-    {{-- @include('partials.validation-errors') --}}
+    @include('partials.validation-errors')
 
     <div class="container py-5">
 
@@ -19,22 +19,22 @@
                 <small id="titleHelper" class="form-text text-muted">Type a title of the comic</small>
 
                 {{-- Error --}}
-                {{-- @error('title')
+                @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="cover_image" class="form-label">Cover image</label>
                 <input type="text" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
                     id="cover_image" aria-describedby="cover_imageHelper" placeholder="www.comic.it"
-                    value="{{ old('cover_image', $comic->title) }}" />
+                    value="{{ old('cover_image', $comic->cover_image) }}" />
                 <small id="cover_imageHelper" class="form-text text-muted">Cover image of the comic</small>
 
                 {{-- Error --}}
-                {{-- @error('cover_image')
+                @error('cover_image')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -45,9 +45,9 @@
                 <small id="authorHelper" class="form-text text-muted">Type the author of the comic</small>
 
                 {{-- Error --}}
-                {{-- @error('author')
+                @error('author')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -58,9 +58,9 @@
                     rows="3">{{ old('description', $comic->description) }}</textarea>
 
                 {{-- Error --}}
-                {{-- @error('description')
+                @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -72,9 +72,9 @@
                     comic</small>
 
                 {{-- Error --}}
-                {{-- @error('publication_year')
+                @error('publication_year')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -85,9 +85,9 @@
                 <small id="priceHelper" class="form-text text-muted">Type the price for the comic</small>
 
                 {{-- Error --}}
-                {{-- @error('price')
+                @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
-                @enderror --}}
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-dark">Update</button>

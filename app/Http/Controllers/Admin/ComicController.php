@@ -82,7 +82,17 @@ class ComicController extends Controller
     {
         // dd($request->all());
 
-        $comic->update($request->all());
+        // Validate
+        $val_data = $request->validate([
+            'title' => 'required',
+            'cover_image' => 'nullable',
+            'author' => 'required',
+            'description' => 'required|min:5|max:200',
+            'publication_year' => 'required',
+            'price' => 'nullable',
+        ]);
+
+        $comic->update($val_data);
         return to_route('comics.index', $comic);
     }
 
